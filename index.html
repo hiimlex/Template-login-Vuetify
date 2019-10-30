@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Citei</title>
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-container class="mt-5" >
+                <v-container style="margin-left: 35%;">
+                    <v-img src="./images/logo.png" class="justify-center logo"></v-img>
+                </v-container>
+                <v-card
+                    class="mx-auto"
+                    max-width="400"
+                  
+                >
+                <v-card-title class="justify-center">Faça seu login</v-card-title>
+                <v-form class="mt-n5">
+                    <v-container>
+                        <v-text-field
+                            label="Email"
+                            color="primary"
+                            v-model="email"
+                            type="email"
+                        ></v-text-field>
+                        <v-text-field
+                            label="Senha"
+                            color="primary"
+                            v-model="password"
+                            type="password"
+                        ></v-text-field>
+                    </v-container>
+                </v-form>
+                <v-card-actions>
+                    <v-btn outlined color="primary">Cadastrar</v-btn>
+                    <div class="flex-grow-1"></div>
+                    <v-btn outlined color="primary">Login</v-btn>
+                </v-card-actions>
+                </v-card>
+            </v-container>
+         </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data(){
+            return{
+                mensagem:null,
+                email:'',
+                password:''
+            }
+        }
+        })
+    </script>
+    <style>
+        .logo{
+            width: 27% !important;
+        }
+        #app{
+            background-color: #626262;
+        }
+        @media (max-width: 798px) 
+        {
+        .logo{
+            width: 70% !important;
+            margin-left: -20%;
+        }
+        }
+    </style>
+</body>
+</html>
